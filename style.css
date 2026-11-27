@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
     padding: 25px 7%;
     width: 100%;
     background: #242424;
@@ -35,9 +35,20 @@ body{
 }
 
 .navbar nav {
-    display: flex;
-    gap: 35px;
-    align-items: center;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 220px;
+    padding: 25px;
+    gap: 25px;
+
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    z-index: 1000;
 }
 
 .navbar nav a {
@@ -54,6 +65,24 @@ body{
 .navbar nav a:hover {
     color: #c5a46d;
     transform: scale(1.1);
+}
+
+.navbar nav.active {
+    display: flex;
+    flex-direction: column;
+    animation: menuSlide 0.25s ease forwards;
+}
+
+@keyframes menuSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .work {
@@ -162,6 +191,24 @@ footer a {
 
     .navbar {
         padding: 20px 5%;
+        position: relative;
+    }
+
+    .navbar nav{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 220px;
+    padding: 25px;
+    gap: 25px;
+
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    z-index: 1000;
     }
 
     nav {
@@ -227,5 +274,39 @@ footer a {
         gap: 15px;
     }
 
+    .navbar nav.active {
+        display: flex;
+        flex-direction: column;
+        animation: menuSlide 0.25s ease forwards;
+    }
 }
-    
+   
+.hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 999;
+}
+
+.hamburger span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+}
+
+@keyframes menuSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
