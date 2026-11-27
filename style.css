@@ -135,6 +135,7 @@ body{
     display: flex;
     align-items: center;
     gap: 70px;
+    background-color: maroon;
 }
 
 .about-image, .about-text {
@@ -154,7 +155,7 @@ body{
 
 .about-text p {
     line-height: 1.8;
-    color: #666;
+    color: #f0f0f0;
 }
 
 .contact {
@@ -178,6 +179,10 @@ footer {
 footer a {
     color: inherit;
     text-decoration: none;
+}
+
+.myname {
+    color: maroon;
 }
 
 .hero,
